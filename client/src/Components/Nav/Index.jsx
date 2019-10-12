@@ -30,17 +30,17 @@ const Nav = () => {
                             {/* Using <NavLink> to be able to target active for a more user friendly active page different color button */}
                             <NavLink exact className="btn text-white" to="/">
                                 Home
-                </NavLink>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink exact className="btn text-white" to="/products">
                                 Products
-                </NavLink>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink exact className="btn text-white" to="/profile">
                                 Profile
-                </NavLink>
+                        </NavLink>
                         </li>
                     </ul>
                 </div>
@@ -49,7 +49,7 @@ const Nav = () => {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/products" component={Products} />
-                <Route exact path="/contactform" component={Profile} />
+                <Route exact path="/profile" component={Profile} />
             </Switch>
         </Router>
     );
