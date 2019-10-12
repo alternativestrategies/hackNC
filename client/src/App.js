@@ -1,16 +1,11 @@
 import React from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import Nav from './Components/Nav/Index';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        Learn React
-      </header>
-    </div >
+    <Nav />
   );
 }
 
