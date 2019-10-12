@@ -1,9 +1,10 @@
 {
   "name": "hack",
   "version": "0.1.0",
-  "proxy": "http://localhost:4000",
   "private": true,
+  "proxy": "http://localhost:4000",
   "dependencies": {
+    "concurrently": "^5.0.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-hook-form": "^3.23.18",
