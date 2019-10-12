@@ -19,7 +19,7 @@ const SignUp = () => {
 
     return (
         <div className="contact-wrapper">
-            <h1>Login</h1>
+            <h1>Sign up</h1>
             <div className="form-wrapper">
                 <fieldset>
                     <form name="contact-me" onSubmit={handleSubmit(onSubmit)} method="POST">
