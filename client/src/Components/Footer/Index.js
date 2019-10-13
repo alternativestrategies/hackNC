@@ -9,7 +9,7 @@ const Footer = () => {
           <h2 className="page-header">CONTACT US</h2>
           <div className="contact-content">
             <div className="name-address">
-              <span className="contact-name">Stars INC.</span>
+              <span className="contact-name">StarCatcher</span>
               <address>1224 Milky Way, Rd, Charlotte, North Carolina</address>
               <p className="contact-p">
                 Have any questions? Want to work together? Let's talk!

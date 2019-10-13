@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Card from './Cards'
 
 const Products = (state) => {
+    const [products, setProducts] = useState(null)
     const { user, loggedInStatus } = state.state.state
     console.log(user, loggedInStatus)
     return (
@@ -49,6 +51,9 @@ const Products = (state) => {
                         </select>
                     </form>
                 </div>
+            </div>
+            <div>
+                {<Card />}
             </div>
         </div>
     )
