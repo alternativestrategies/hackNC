@@ -5,6 +5,7 @@ const Products = (state) => {
     const { user, loggedInStatus } = state.state.state
     console.log(user, loggedInStatus)
     return (
+
         <div className="container-filter">
             <h2>Filters</h2>
             <div className="filter-container">
