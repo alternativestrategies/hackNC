@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Slider from './Slider'
+import Content from './Content'
 
 const Home = (state) => {
     const { user, loggedInStatus } = state.state.state
@@ -9,8 +11,8 @@ const Home = (state) => {
     // }
     return (
         <div>
-            <p>Home page</p>
             {<Slider />}
+            {<Content />}
         </div>
     )
 }
