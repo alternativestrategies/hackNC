@@ -3,6 +3,8 @@ import React from 'react';
 const Profile = (state) => {
     const { user, loggedInStatus } = state.state.state
     console.log(user, loggedInStatus)
+
+
     return (
         <div>
             <h2>Username:</h2>
