@@ -5,7 +5,7 @@ const morgan = require('morgan')
 require('dotenv').config()
 
 const app = express();
-const port = 3001;
+const port = 4000;
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
