@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Products = (state) => {
     const { user, loggedInStatus } = state.state.state
     console.log(user, loggedInStatus)
