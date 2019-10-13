@@ -32,6 +32,9 @@
   margin: 25px;
 }
 
+.row{
+  margin:0 !important;
+}
 .container-drop input {
   border-radius: 20px;
 }
