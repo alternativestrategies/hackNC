@@ -3,7 +3,7 @@ import Contact from "./Contact";
 
 const Footer = () => {
   return (
-    <footer id="sticky-footer" class="py-4  text-50">
+    <footer id="sticky-footer" className="py-4  text-50">
       <div className="contact row" id="contact">
         <div className="container text-left col-6" id="ConLeft">
           <h2 className="page-header">CONTACT US</h2>
@@ -19,21 +19,21 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i class="fab fa-twitter fa-3x"></i>
+                <i className="fab fa-twitter fa-3x"></i>
               </a>
               <a
                 href="https://www.facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i class="fab fa-facebook-square fa-3x"></i>
+                <i className="fab fa-facebook-square fa-3x"></i>
               </a>
               <a
                 href="https://www.instagram.com/?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i class="fab fa-instagram fa-3x"></i>
+                <i className="fab fa-instagram fa-3x"></i>
               </a>
             </div>
           </div>
