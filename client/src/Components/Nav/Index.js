@@ -25,7 +25,7 @@ const Nav = (state) => {
     return (
         //To use react-router-dom you have to wrap the code for the links in <BrowserRouter>
         <Router>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <nav className="navbar navbar-expand-lg navbar-dark sticky-top">
                 <NavLink exact className="btn text-white" to="/">
                     <span className="navbar-brand mb-1 h1 nav-title">Stars</span>
                 </NavLink>
