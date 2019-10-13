@@ -56,7 +56,7 @@ const Products = (state) => {
             <div>
                 {products && products.map((item) => {
                     return (
-                        <Card item={item} />
+                        <Card name={item.product_name} />
                     )
                 })}
             </div>

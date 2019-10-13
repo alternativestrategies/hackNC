@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cards = (item) => {
+const Cards = (name) => {
   return (
     <div>
       <div className="album py-5">
@@ -11,8 +11,8 @@ const Cards = (item) => {
                 <div className="card-deck">
                   <div className="card" id="foo">
                     <div className="card-body">
-                      <h6 className="card-title">{item.product_name}</h6>
-                      <p className="card-text">{item.product_desc}</p>
+                      <h6 className="card-title">{name}</h6>
+                      <p className="card-text"></p>
                     </div>
                     <div className="card-footer">
                       <small className="price">$DWEW</small>
