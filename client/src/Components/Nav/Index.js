@@ -29,7 +29,7 @@ const Nav = (state) => {
         <Router>
             <nav className="navbar navbar-expand-lg navbar-dark sticky-top">
                 <NavLink exact className="btn text-white" to="/">
-                    <span className="navbar-brand mb-1 h1 nav-title">Stars</span>
+                    <span className="navbar-brand mb-1 h1 nav-title">StarCatcher</span>
                 </NavLink>
                 <button
                     className="navbar-toggler"
