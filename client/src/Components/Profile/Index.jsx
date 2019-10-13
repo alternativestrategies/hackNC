@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Profile = () => {
+const Profile = (state) => {
+    const { user, loggedInStatus } = state.state.state
+    console.log(user, loggedInStatus)
     return (
         <div>
             <h2>Username:</h2>
@@ -9,14 +11,26 @@ const Profile = () => {
             <div>
                 <h3>Bid history</h3>
                 <table>
-                    <th>Product Name</th>
-                    <th>Bid Amount</th>
-                    <th>Bid Status</th>
-                    <tr>
-                        <td>Name#1</td>
-                        <td>$0.00</td>
-                        <td>Sold</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td colSpan={3}>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>Product</td>
+                                            <td>Bid Amount</td>
+                                            <td>Bid Status</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Product #1</td>
+                                            <td>Bid Amount #1</td>
+                                            <td>Bid Status #1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>

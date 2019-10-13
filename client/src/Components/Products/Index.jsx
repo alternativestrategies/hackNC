@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Products = () => {
+const Products = (state) => {
+    const { user, loggedInStatus } = state.state.state
+    console.log(user, loggedInStatus)
     return (
         <div className="container-filter">
             <div className="container-type">
