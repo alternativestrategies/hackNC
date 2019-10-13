@@ -21,10 +21,109 @@
   color: #09d3ac;
 }
 
-.hidden{
-  display:none !important;
+.fab {
+  padding: 10px;
 }
 
-.profile{
-  display: block !important;
+#who {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+#who .btn-who {
+  background-color: #843b62;
+  color: #fff;
+  width: 50%;
+}
+
+#who .btn-who:hover {
+  background-color: transparent;
+  border: 1px solid #798aeb;
+  color: #389fb9;
+}
+
+#ConLeft {
+  padding: 50px;
+
+  /* border: 1px solid blue; */
+}
+
+.contact-form {
+  padding: 30px;
+  /* border: 1px solid blue; */
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#sticky-footer {
+  padding: 2rem 0;
+  background-color: #74546a;
+  color: #ffb997;
+}
+
+#sticky-footer a {
+  color: #ffb997;
+}
+
+#sticky-footer .fa {
+  padding: 0 5px;
+}
+
+.navbar {
+  background-color: rgba(116, 84, 106, 0.9);
+  border-bottom: 1px solid #ffb997;
+  font-family: "Roboto Mono", monospace;
+}
+
+.navbar .navbar-nav .nav-link {
+  color: #0b032d;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: rgb(245, 134, 255);
+}
+
+.navbar-toggler-icon {
+  color: #0b032d;
+}
+
+.slide-container {
+  width: 70%;
+  margin: auto;
+}
+
+/* #contact {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+} */
+
+.card-body {
+  text-align: center;
+  /* height: 150px; */
+}
+.card-footer {
+  text-align: left;
+  font-size: x-large;
+}
+.card-title {
+  font-size: larger;
+}
+#foo {
+  color: #0b032d;
+  font-size: large;
+  border: 2px solid #74546a;
+  background-color: rgba(255, 185, 151, 0.438);
+}
+
+#btn {
+  border: blue;
+}
+
+.user {
+  padding: 50px;
+  border: blue;
+}
+
+.user1 {
+  /* background-color: #09d3ac; */
+  box-shadow: 5px 10px 10px;
+  background-image: url("http://www.pngmaster.com/images/4/transparent-pixel-star-backgrounds-i-moved-blogs-4573.png");
 }
