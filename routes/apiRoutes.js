@@ -2,6 +2,8 @@ const router = require("express").Router()
 const Products = require('../models/products.js')
 const Users = require('../models/users.js')
 const Bid = require('../models/bids.js')
+const EndBid = require('../models/endbid.js')
+const StartBid = require('../models/startbid.js')
 const bcrypt = require('bcrypt')
 const Joi = require('joi')
 
@@ -35,6 +37,28 @@ router.get('/products', async (req, res) => {
     } catch(err) {
         res.status(500).json({message: err.message})
     }
+})
+
+
+router.get('/starting_soon', async(req, res) => {
+    let date = new Date()
+    try{
+       const time = await StartBid.find({start_time: {$gte : date}});
+       res.json(time);
+    }
+    catch(err) {
+        res.status(500).json({message: err.message})
+    }  
+})
+router.get('/ending_soon', async(req, res) => {
+    let date = new Date()
+    try{
+       const time = await EndBid.find({end_time: {$gte : date}});
+       res.json(time);
+    }
+    catch(err) {
+        res.status(500).json({message: err.message})
+    }  
 })
 
 router.get('/products/filter/:galaxy', async (req, res) => {
@@ -102,5 +126,6 @@ router.post('/user/login', async (req, res) => {
 
     res.send(true)
 })
+
 
 module.exports = router;

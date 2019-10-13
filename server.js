@@ -5,7 +5,7 @@ const morgan = require('morgan')
 require('dotenv').config()
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3001;
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -244,47 +244,46 @@ const StartBid = require('./models/startbid.js')
 const EndBid = require('./models/endbid.js')
 // EndBid.create([
 //     {
-//         start_time: '2019-10-5',
+//         end_time: '2019-10-5',
 //         product: '5da2a030a1914582c6cb006e'
 //     },
 //     {
-//         start_time: '2019-10-14',
+//         end_time: '2019-10-14',
 //         product: '5da2a030a1914582c6cb006f'
 //     },
 //     {
-//         start_time: '2019-10-18',
+//         end_time: '2019-10-18',
 //         product: '5da2a030a1914582c6cb0070'
 //     },
 //     {
-//         start_time: '2019-09-23',
+//         end_time: '2019-09-23',
 //         product: '5da2a030a1914582c6cb0072'
 //     },
 //     {
-//         start_time: '2019-09-27',
+//         end_time: '2019-09-27',
 //         product: '5da2a030a1914582c6cb0073'
 //     },
 //     {
-//         start_time: '2019-10-21',
+//         end_time: '2019-10-21',
 //         product: '5da2a030a1914582c6cb0071'
 //     },
 //     {
-//         start_time: '2019-10-21',
+//         end_time: '2019-10-21',
 //         product: '5da2a030a1914582c6cb0074'
 //     },
 //     {
-//         start_time: '2019-10-28',
+//         end_time: '2019-10-28',
 //         product: '5da2a030a1914582c6cb0075'
 //     },
 //     {
-//         start_time: '2019-11-12',
+//         end_time: '2019-11-12',
 //         product: '5da2a030a1914582c6cb0077'
 //     },
 //     {
-//         start_time: '2019-11-12',
+//         end_time: '2019-11-12',
 //         product: '5da2a030a1914582c6cb0077'
 //     } 
 // ])
-
 
 
 //this was an exercise in learning how to populate 
