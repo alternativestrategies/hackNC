@@ -81,7 +81,7 @@ const Products = (state) => {
                                             <div className="card-deck">
                                                 <div className="card" id="foo">
                                                     <div className="card-body">
-                                                        <img src={`/img/${item.img}`} alt={item.product_name} />
+                                                        <img className="img-thumbnail" src={`/img/${item.img}`} alt={item.product_name} />
                                                         <h6 className="card-title">{item.product_name}</h6>
                                                         <p className="card-text">{item.product_desc}</p>
                                                     </div>
