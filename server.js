@@ -39,7 +39,7 @@ Products.create([
         img: 'mimosa.png'
     },
     {
-    product_name: 'Polaris',
+        product_name: 'Polaris',
         galaxy: 'Milky Way',
         product_desc: 'It is the brightest star in the constellation Ursa Minor. It is almost straight above Earth\'s North Pole.',
         base_price: 20,
@@ -58,35 +58,35 @@ Products.create([
         product_desc: "The beautiful blue-white star Rigel is in the constellation Orion the Hunter.",
         base_price: 20,
         img: "rigel.jpg"
-    }, 
+    },
     {
         product_name: 'Betelgeuse',
         galaxy: 'Milky Way',
         product_desc: "Betelgeuse is one of the largest known stars and is probably at least the size of the orbits of Mars or Jupiter around the sun. ",
         base_price: 20,
         img: "betelgeuse.jpg"
-    }, 
+    },
     {
         product_name: 'Vega',
         galaxy: 'Milky Way',
         product_desc: 'Vega is the brightest star in the northern constellation of Lyra.',
         base_price: 20,
         img: "vega.jpg"
-    }, 
+    },
     {
         product_name: 'Merope',
         galaxy: 'Milky Way',
         product_desc: "Merope, is one of the Pleiades or Seven Sisters, a group of stars on the shoulder of the Bull.",
         base_price: 20,
         img: 'merope.jpg'
-    }, 
+    },
     {
         product_name: 'Antares',
         galaxy: 'Milky Way',
         product_desc: 'Antares is a binary star system consisting of an enormous red supergiant and a smaller but hotter companion.',
         base_price: 20,
         img: 'antares.jpeg'
-    }, 
+    },
     {
         product_name: 'Canopus',
         galaxy: 'Milky Way',

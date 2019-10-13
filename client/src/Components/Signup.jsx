@@ -2,8 +2,9 @@ import React from 'react';
 import useForm from 'react-hook-form';
 import { BrowserRouter as Route, NavLink } from 'react-router-dom';
 
-const SignUp = () => {
-
+const SignUp = (state) => {
+    const { user, loggedInStatus } = state.state.state
+    console.log(user, loggedInStatus)
     const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = (state, e) => {

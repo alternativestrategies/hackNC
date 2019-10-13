@@ -7,7 +7,7 @@ import Profile from '../Profile/Index';
 import Login from '../Login';
 import Signup from '../Signup';
 
-const Nav = () => {
+const Nav = (state) => {
     return (
         //To use react-router-dom you have to wrap the code for the links in <BrowserRouter>
         <Router>
@@ -30,7 +30,7 @@ const Nav = () => {
                     <ul className="nav navbar-nav navbar-right ml-auto">
                         <li className="nav-item">
                             {/* Using <NavLink> to be able to target active for a more user friendly active page different color button */}
-                            <NavLink exact className="btn text-white" to="/">
+                            <NavLink exact className="btn text-white" to="/" >
                                 Home
                             </NavLink>
                         </li>
@@ -54,13 +54,13 @@ const Nav = () => {
             </nav>
             {/* This is where the routing paths are determined */}
             <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/products" component={Products} />
-                <Route exact path="/profile" component={Profile} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/signup" component={Signup} />
+                <Route exact path="/" component={() => <Home state={state} />} />
+                <Route exact path="/products" component={() => <Products state={state} />} />
+                <Route exact path="/profile" component={() => <Profile state={state} />} />
+                <Route exact path="/login" component={() => <Login state={state} />} />
+                <Route exact path="/signup" component={() => <Signup state={state} />} />
             </Switch>
-        </Router>
+        </Router >
     );
 };
 
