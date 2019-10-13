@@ -1,4 +1,5 @@
 import React from 'react';
+import Cards from "./Cards"
 
 const Products = () => {
     return (
@@ -45,6 +46,7 @@ const Products = () => {
                     </select>
                 </form>
             </div>
+            {<Cards/>}
         </div>
     )
 }

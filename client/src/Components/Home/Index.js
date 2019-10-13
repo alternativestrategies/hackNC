@@ -1,11 +1,14 @@
 import React from 'react';
-import Slider from './Slider'
+import Sl from './Sl'
+import Content from "./Content"
 
 const Home = () => {
     return (
         <div>
-        <p>Home page</p>
-        {<Slider />}
+        {<Sl />}
+    {<Content/>
+    }
+    
         </div>
     )
 }
