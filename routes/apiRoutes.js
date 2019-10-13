@@ -74,6 +74,20 @@ router.get('/products/filter/:galaxy', async (req, res) => {
     }
 })
 
+//get bids
+router.get('/bids', (req, res) =>{
+    Bid.find()
+    .populate('Products')
+    .then( (p) => {
+        res.json(p)
+    })
+    .catch((err) => {
+        res.json(err)
+    })
+})
+
+
+
 router.get('/user/:username', async (req, res) => {
     const username = req.params.username
     try {
