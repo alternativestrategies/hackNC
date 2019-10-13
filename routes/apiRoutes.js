@@ -74,10 +74,20 @@ router.get('/products/filter/:galaxy', async (req, res) => {
     }
 })
 
+//sort
+router.get('/highest_bid', async(req, res) => {
+    try {
+        const amount = await Bid.find().sort('-amount').limit()
+        res.json(amount)
+    } catch(err) {
+        res.status(500).json({message: err.message})
+    }
+})
+
 //get bids
 router.get('/bids', (req, res) =>{
     Bid.find()
-    .populate('Products')
+    .populate('product', ['product_name'])
     .then( (p) => {
         res.json(p)
     })
