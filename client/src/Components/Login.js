@@ -36,11 +36,8 @@ const Login = (state) => {
 
                         <label htmlFor="msg">Password</label>
 
-                         <input  className="pass" type="text" name="password" placeholder="Password" id="pass" onChange={handleChange} ref={register({ required: true, pattern: /(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/ })}></input>
+                        <input type="text" name="password" placeholder="Password" id="pass" onChange={handleChange} ref={register({ required: true, pattern: /(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/ })}></input>
                         <p className="error-msg">{errors.password && 'Incorrect password'}</p>
-//                         <input className="pass" type="text" name="message" placeholder="Password" id="msg" onChange={handleChange} ref={register({ required: true, pattern: /(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/ })}></input>
-//                          <p className="error-msg">{errors.message && 'Incorrect password'}</p>
-// >>>>>>> master
 
                         <button className="submit " type="submit" value="Submit" name="submit" id="sub">Login</button>
                     </form>
