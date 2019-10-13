@@ -3,6 +3,7 @@ import React from "react";
 const Content = () => {
   return (
     <section id="who">
+
       <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -24,7 +25,7 @@ const Content = () => {
             <img
               class="img-fluid rounded-pill"
               src="https://cdn.dribbble.com/users/1781642/screenshots/4821721/dribbble.jpg"
-              alt="fashion"
+              alt="space"
             />
           </div>
         </div>
