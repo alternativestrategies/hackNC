@@ -7,10 +7,13 @@ import { BrowserRouter as Route, NavLink } from 'react-router-dom';
 const Login = (state) => {
     const { user, loggedInStatus } = state.state.state
     console.log(user, loggedInStatus)
-    const { register, handleSubmit, errors } = useForm();
 
-    const onSubmit = (state, e) => {
+    const { register, handleSubmit, errors } = useForm()
+
+
+    const onSubmit = (data, e) => {
         alert("Logged in")
+
         e.target.reset()
     }
     console.log(errors);
@@ -32,8 +35,9 @@ const Login = (state) => {
                         <p className="error-msg">{errors.email && 'Please enter in a vaild email address!'}</p>
 
                         <label htmlFor="msg">Password</label>
-                        <input className="pass" type="text" name="message" placeholder="Password" id="msg" onChange={handleChange} ref={register({ required: true, pattern: /(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/ })}></input>
-                        <p className="error-msg">{errors.message && 'Incorrect password'}</p>
+
+                        <input type="text" name="password" placeholder="Password" id="pass" onChange={handleChange} ref={register({ required: true, pattern: /(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/ })}></input>
+                        <p className="error-msg">{errors.password && 'Incorrect password'}</p>
 
                         <button className="submit " type="submit" value="Submit" name="submit" id="sub">Login</button>
                     </form>
