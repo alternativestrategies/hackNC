@@ -1,5 +1,6 @@
 import React from 'react';
 import useForm from 'react-hook-form';
+
 import { BrowserRouter as Route, NavLink } from 'react-router-dom';
 
 const SignUp = (state) => {
@@ -23,6 +24,7 @@ const SignUp = (state) => {
             <h1>Sign up</h1>
             <div className="form-wrapper">
                 <fieldset>
+
                     <form onSubmit={handleSubmit(onSubmit)} method="POST">
 
                         <label htmlFor="fname">Full Name</label>
@@ -34,6 +36,7 @@ const SignUp = (state) => {
                         <p className="error-msg">{errors.email && 'Please enter in a vaild email address!'}</p>
 
                         <label htmlFor="msg">Password</label>
+
                         <input type="text" name="message" placeholder="Password" id="msg" onChange={handleChange} ref={register({ required: true, pattern: /(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/ })}></input>
                         <p className="error-msg">{errors.message && 'Please enter in a valid password. (Needs to have 1 capital letter, 1 number, and 1 special character'}</p>
 
