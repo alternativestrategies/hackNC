@@ -71,11 +71,12 @@ const Products = (state) => {
                 </div>
             </div>
             <React.Fragment>
+            <div className="album py-5">
+            <div className="container">
+                <div className="row">
                 {products && products.map((item) => {
                     return (
-                        <div className="album py-5">
-                            <div className="container">
-                                <div className="row">
+                        
                                     <div className="col-md-4">
                                         <div className="card mb-4 shadow-sm">
                                             <div className="card-deck">
@@ -97,14 +98,15 @@ const Products = (state) => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                </div>
+                                    
                             </div>
-                        </div>
+                        
                     )
                 })}
                 )
+                </div>
+                </div>
+                </div>
     </React.Fragment>
         </div>
     )
