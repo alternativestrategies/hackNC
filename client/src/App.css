@@ -20,3 +20,7 @@
 .App-link {
   color: #09d3ac;
 }
+
+.ReactModal__Overlay {
+  z-index: 1000;
+}
