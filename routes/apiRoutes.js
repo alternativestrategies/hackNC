@@ -1,5 +1,7 @@
 const router = require("express").Router()
 const Products = require('../models/products.js')
+const Users = require('../models/users.js')
+const Bid = require('../models/bids.js')
 const bcrypt = require('bcrypt')
 const Joi = require('joi')
 
@@ -28,7 +30,7 @@ router.get('/', (req, res) => {
 //gets products from database
 router.get('/products', async (req, res) => {
     try {
-        const products = await Products.find()
+        const products = await Products.find().limit(10)
         res.json(products)
     } catch(err) {
         res.status(500).json({message: err.message})
@@ -40,7 +42,7 @@ router.get('/products/filter/:galaxy', async (req, res) => {
     const ANY = "any";
     if(galaxy !== ANY){
         try {
-            const products = await Products.find({galaxy: `${galaxy}`})
+            const products = await Products.find({galaxy: `${galaxy}`}).limit(10)
             res.json(products)
         }catch(err){
             res.status(500).json({message: err.message})
