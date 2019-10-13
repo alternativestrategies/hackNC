@@ -1,9 +1,12 @@
 import React from 'react';
 import useForm from 'react-hook-form';
 
+import { BrowserRouter as Route, NavLink } from 'react-router-dom';
 
-const Login = () => {
 
+const Login = (state) => {
+    const { user, loggedInStatus } = state.state.state
+    console.log(user, loggedInStatus)
     const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = (state, e) => {
@@ -29,18 +32,21 @@ const Login = () => {
                         <p className="error-msg">{errors.email && 'Please enter in a vaild email address!'}</p>
 
                         <label htmlFor="msg">Password</label>
-                        <textarea name="message" placeholder="Write your message in here!" id="msg" onChange={handleChange} ref={register({ required: true, min: 2, max: 1000, maxLength: 200 })}></textarea>
-                        <p className="error-msg">{errors.message && 'Please enter in a message!'}</p>
 
-                        <button type="submit" value="Submit" name="submit" id="sub">Submit</button>
+                        <input type="text" name="message" placeholder="Password" id="msg" onChange={handleChange} ref={register({ required: true, pattern: /(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/ })}></input>
+                        <p className="error-msg">{errors.message && 'Incorrect password'}</p>
+
+                        <button type="submit" value="Submit" name="submit" id="sub">Login</button>
                     </form>
                 </fieldset>
+                <div>
+
+                    <NavLink to="/signup">New? Sign up here!</NavLink>
+
+                </div>
             </div>
         </div >
-
-
     )
-
 }
 
 export default Login;

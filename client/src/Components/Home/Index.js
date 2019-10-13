@@ -1,14 +1,18 @@
 import React from 'react';
-import Sl from './Sl'
-import Content from "./Content"
 
-const Home = () => {
+import Slider from './Slider'
+import Content from './Content'
+
+const Home = (state) => {
+    const { user, loggedInStatus } = state.state.state
+    console.log(user, loggedInStatus)
+    // if (!state.state.state.user || state.state.state.user !== "") {
+
+    // }
     return (
         <div>
-        {<Sl />}
-    {<Content/>
-    }
-    
+            {<Slider />}
+            {<Content />}
         </div>
     )
 }

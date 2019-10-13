@@ -1,9 +1,11 @@
 import React from 'react';
 import useForm from 'react-hook-form';
 
+import { BrowserRouter as Route, NavLink } from 'react-router-dom';
 
-const SignUp = () => {
-
+const SignUp = (state) => {
+    const { user, loggedInStatus } = state.state.state
+    console.log(user, loggedInStatus)
     const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = (state, e) => {
@@ -22,7 +24,8 @@ const SignUp = () => {
             <h1>Sign up</h1>
             <div className="form-wrapper">
                 <fieldset>
-                    <form name="contact-me" onSubmit={handleSubmit(onSubmit)} method="POST">
+
+                    <form onSubmit={handleSubmit(onSubmit)} method="POST">
 
                         <label htmlFor="fname">Full Name</label>
                         <input type="text" placeholder="Full Name" onChange={handleChange} name="full_name" id="fname" ref={register({ required: true, min: 5, pattern: /^[a-zA-z']([^0-9]*)$/ })} />
@@ -33,12 +36,14 @@ const SignUp = () => {
                         <p className="error-msg">{errors.email && 'Please enter in a vaild email address!'}</p>
 
                         <label htmlFor="msg">Password</label>
-                        <textarea name="password" placeholder="Enter your password" id="password" onChange={handleChange} ref={register({ required: true, pattern: /(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/ })}></textarea>
-                        <p className="error-msg">{errors.password && 'Please enter in a password!'}</p>
 
-                        <button type="submit" value="Submit" name="submit" id="sub">Submit</button>
+                        <input type="text" name="message" placeholder="Password" id="msg" onChange={handleChange} ref={register({ required: true, pattern: /(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/ })}></input>
+                        <p className="error-msg">{errors.message && 'Please enter in a valid password. (Needs to have 1 capital letter, 1 number, and 1 special character'}</p>
+
+                        <button type="submit" value="Submit" name="submit" id="sub">Sign up</button>
                     </form>
                 </fieldset>
+                <NavLink to="/login">New? Sign up here!</NavLink>
             </div>
         </div >
 
