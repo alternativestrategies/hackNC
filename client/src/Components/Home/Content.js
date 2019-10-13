@@ -8,7 +8,7 @@ const Content = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-6">
-            <h2>Stars</h2>
+            <h2>StarCatcher</h2>
 
             <hr align="left" width="50%" />
             <p className="lead">
