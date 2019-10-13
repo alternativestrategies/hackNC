@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Home from '../Home/Index';
 import Products from '../Products/Index';
 import Profile from '../Profile/Index';
+import Login from '../Login';
+import Signup from '../Signup';
 
 const Nav = () => {
     return (
@@ -42,6 +44,11 @@ const Nav = () => {
                                 Profile
                         </NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink exact className="btn text-white" to="/Login">
+                                Login
+                        </NavLink>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -50,6 +57,8 @@ const Nav = () => {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/products" component={Products} />
                 <Route exact path="/profile" component={Profile} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/signup" component={Signup} />
             </Switch>
         </Router>
     );
