@@ -14,7 +14,7 @@ const Products = () => {
                 <h3 className="tag">Filter by Galaxy</h3>
                 <form className="filterButtons" name="type-drop">
                     <select >
-                        <option defaultValue={true} disabled="disabled" value="">--- Select A Galaxy ---</option>
+                        <option defaultValue={true} disabled="disabled" value="any">--- Select A Galaxy ---</option>
                         <option value="character">Galaxy #1</option>
                         <option value="animal">Galaxy #2</option>
                         <option value="other">Galaxy #3</option>
@@ -26,7 +26,7 @@ const Products = () => {
                 <h3 className="tag">Filter by Time</h3>
                 <form className="filterButtons" name="price-drop">
                     <select>
-                        <option defaultValue={true} disabled="disabled" value="">--- Select A Time ---</option>
+                        <option defaultValue={true} disabled="disabled" value="any">--- Select A Time ---</option>
                         <option value="1">Time #1</option>
                         <option value="2">Time #2</option>
                         <option value="3">Time #3</option>
@@ -38,7 +38,7 @@ const Products = () => {
                 <h3 className="tag">Filter by Price</h3>
                 <form className="filterButtons" name="price-drop">
                     <select>
-                        <option defaultValue={true} disabled="disabled" value="">--- Select A Price ---</option>
+                        <option defaultValue={true} disabled="disabled" value="any">--- Select A Price ---</option>
                         <option value="1">Price #1</option>
                         <option value="2">Price #2</option>
                         <option value="3">Price #3</option>
