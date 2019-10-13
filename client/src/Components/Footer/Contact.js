@@ -22,7 +22,7 @@ const Contact = () => {
             <textarea name="message" className="form-control" placeholder="Write your message in here!" id="msg" ref={register({ required: true, min: 2, max: 1000, maxLength: 200 })}></textarea>
             <p className="error-msg">{errors.message && 'Please enter in a message!'}</p>
 
-            <button type="submit" value="Submit" id="sub">Submit</button>
+            <button className="btn btn-light mt-2" type="submit" value="Submit" id="sub">Submit</button>
         </form>
     )
 }
