@@ -1,9 +1,11 @@
+
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import Home from '../Home/Index';
 import Products from '../Products/Index';
 import Profile from '../Profile/Index';
+
 import Login from '../Login';
 import Signup from '../Signup';
 
@@ -44,6 +46,7 @@ const Nav = (state) => {
                     <ul className="nav navbar-nav navbar-right ml-auto">
                         <li className="nav-item">
                             {/* Using <NavLink> to be able to target active for a more user friendly active page different color button */}
+
                             <NavLink exact className="btn text-white" to="/" >
                                 Home
                             </NavLink>
@@ -54,6 +57,7 @@ const Nav = (state) => {
                             </NavLink>
                         </li>
                         <li className="nav-item">
+
                             <NavLink exact className={hidden ? 'hidden' : 'profile btn-text-white'} to="/profile">
                                 Profile
                         </NavLink>
@@ -68,6 +72,7 @@ const Nav = (state) => {
             </nav>
             {/* This is where the routing paths are determined */}
             <Switch>
+
                 <Route exact path="/" component={() => <Home state={state} />} />
                 <Route exact path="/products" component={() => <Products state={state} />} />
                 <Route exact path="/profile" component={() => <Profile state={state} />} />

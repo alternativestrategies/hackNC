@@ -29,7 +29,8 @@ router.get('/', (req, res) => {
 router.get('/products', async (req, res) => {
     try {
         const products = await Products.find()
-        res.json(products)
+        const productsData = res.json(products)
+        res.status(200).send(productsData)
     } catch(err) {
         res.status(500).json({message: err.message})
     }
@@ -41,7 +42,8 @@ router.get('/products/filter/:galaxy', async (req, res) => {
     if(galaxy !== ANY){
         try {
             const products = await Products.find({galaxy: `${galaxy}`})
-            res.json(products)
+            const productsData = res.json(products)
+            res.status(200).send(products)
         }catch(err){
             res.status(500).json({message: err.message})
         }
@@ -51,8 +53,10 @@ router.get('/products/filter/:galaxy', async (req, res) => {
 router.get('/user/:username', async (req, res) => {
     const username = req.params.username
     try {
-        const users = await Users.find({user_name: username})
-        res.json(users)
+        const user = await Users.find({user_name: username})
+        const userData = res.json(user)
+        res.status(200).send(userData)
+
     } catch(err) {
         res.status(500).json({message: err.message})
     }
@@ -63,6 +67,7 @@ router.put('/products/bid', async (req, res) => {
     const id = req.body.id
     try{
         const products = await Bid.update({_id: id}, {$max: {bid: newbid}})
+        
     }catch(err) {
         res.status(500).json({message: err.message})
     }
@@ -74,7 +79,7 @@ router.post('/user/signup', async (req, res) => {
     let user = await user.findOne({email: req.body.email});
     if(user) return res.status(400).send('User already registered');
 
-    user = new user({
+    user = new User({
         name: req.body.name,
         user_name: req.body.user_name,
         email: req.body.email,
@@ -86,7 +91,7 @@ router.post('/user/signup', async (req, res) => {
 
     await user.save()
 
-    res.send(user)
+    res.status(200).send(true)
 })
 
 router.post('/user/login', async (req, res) => {
@@ -99,7 +104,7 @@ router.post('/user/login', async (req, res) => {
     const validPassword = await bcrypt.compare(req.body.password, user.password)
     if(!validPassword) return res.status(400).send("Invalid username or password")
 
-    res.send(true)
+    res.status(200).send(true)
 })
 
 module.exports = router;
