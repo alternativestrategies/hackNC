@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import Home from '../Home/Index';
@@ -8,6 +8,20 @@ import Login from '../Login';
 import Signup from '../Signup';
 
 const Nav = (state) => {
+    const [hidden, setHidden] = useState(true)
+
+    const toggleProfile = () => {
+        if (state.state.user === {} || !state.state.user) {
+            setHidden(false)
+        } else {
+            setHidden(true)
+        }
+    }
+
+    useEffect(() => {
+        toggleProfile()
+    }, [hidden])
+
     return (
         //To use react-router-dom you have to wrap the code for the links in <BrowserRouter>
         <Router>
@@ -40,7 +54,7 @@ const Nav = (state) => {
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink exact className="btn text-white" to="/profile">
+                            <NavLink exact className={hidden ? 'hidden' : 'profile btn-text-white'} to="/profile">
                                 Profile
                         </NavLink>
                         </li>
