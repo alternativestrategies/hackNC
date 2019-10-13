@@ -48,9 +48,10 @@ router.get('/products/filter/:galaxy', async (req, res) => {
     }
 })
 
-router.get('/user', async (req, res) => {
+router.get('/user/:username', async (req, res) => {
+    const username = req.params.username
     try {
-        const users = await Users.find()
+        const users = await Users.find({user_name: username})
         res.json(users)
     } catch(err) {
         res.status(500).json({message: err.message})
