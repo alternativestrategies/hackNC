@@ -34,7 +34,8 @@ router.get('/products', async (req, res) => {
     const productResult = []
     try {
         const product = await Products.find().limit(10)
-        product.forEach((doc, err) => {
+        productjson = res.json()
+        productjson.forEach((doc, err) => {
             productResult.push(doc)
         }, () => {
             res.send(productResult)
