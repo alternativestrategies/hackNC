@@ -1,8 +1,17 @@
 import React from 'react';
+import Slider from './Slider'
 
-const Home = () => {
+const Home = (state) => {
+    const { user, loggedInStatus } = state.state.state
+    console.log(user, loggedInStatus)
+    // if (!state.state.state.user || state.state.state.user !== "") {
+
+    // }
     return (
-        <p>Home page</p>
+        <div>
+            <p>Home page</p>
+            {<Slider />}
+        </div>
     )
 }
 
