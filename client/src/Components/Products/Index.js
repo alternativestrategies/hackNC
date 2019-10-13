@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Card from './Cards'
-
 
 const Products = (state) => {
     const [products, setProducts] = useState(null)
@@ -83,11 +81,12 @@ const Products = (state) => {
                                             <div className="card-deck">
                                                 <div className="card" id="foo">
                                                     <div className="card-body">
+                                                        <img src={`/img/${item.img}`} alt={item.product_name} />
                                                         <h6 className="card-title">{item.product_name}</h6>
-                                                        <p className="card-text"></p>
+                                                        <p className="card-text">{item.product_desc}</p>
                                                     </div>
                                                     <div className="card-footer">
-                                                        <small className="price">$DWEW</small>
+                                                        <small className="price">${item.base_price}</small>
                                                         <button
                                                             type="button"
                                                             className="btn btn-secondary float-right"
