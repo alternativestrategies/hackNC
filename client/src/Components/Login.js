@@ -34,9 +34,8 @@ const Login = (state) => {
                         <input className="un" type="text" placeholder="Email address" onChange={handleChange} name="email" id="mail" ref={register({ required: true, pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })} />
                         <p className="error-msg">{errors.email && 'Please enter in a vaild email address!'}</p>
 
-                        <label htmlFor="msg">Password</label>
-
-                        <input type="text" name="password" placeholder="Password" id="pass" onChange={handleChange} ref={register({ required: true, pattern: /(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/ })}></input>
+                        <label htmlFor="pass">Password</label>
+                        <input type="text" name="password" className="pass" placeholder="Password" id="pass" onChange={handleChange} ref={register({ required: true, pattern: /(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/ })}></input>
                         <p className="error-msg">{errors.password && 'Incorrect password'}</p>
 
                         <button className="submit " type="submit" value="Submit" name="submit" id="sub">Login</button>

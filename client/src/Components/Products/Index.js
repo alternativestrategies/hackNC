@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Cards'
 
 
@@ -6,6 +6,25 @@ const Products = (state) => {
     const [products, setProducts] = useState(null)
     const { user, loggedInStatus } = state.state.state
     console.log(user, loggedInStatus)
+
+
+    const productsApiCaller = async () => {
+        try {
+            const res = await fetch("api/products");
+            const text = await res.text();
+            const response = text.length ? JSON.parse(text) : {}
+            setProducts(response)
+            console.log(products)
+        }
+        catch (error) {
+            throw error;
+        }
+    }
+
+    useEffect(() => {
+        productsApiCaller()
+    }, [])
+
     return (
 
         <div className="container-filter">
@@ -53,13 +72,41 @@ const Products = (state) => {
                     </form>
                 </div>
             </div>
-            <div>
+            <React.Fragment>
                 {products && products.map((item) => {
                     return (
-                        <Card name={item.product_name} />
+                        <div className="album py-5">
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col-md-4">
+                                        <div className="card mb-4 shadow-sm">
+                                            <div className="card-deck">
+                                                <div className="card" id="foo">
+                                                    <div className="card-body">
+                                                        <h6 className="card-title">{item.product_name}</h6>
+                                                        <p className="card-text"></p>
+                                                    </div>
+                                                    <div className="card-footer">
+                                                        <small className="price">$DWEW</small>
+                                                        <button
+                                                            type="button"
+                                                            className="btn btn-secondary float-right"
+                                                        >
+                                                            Buy
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     )
                 })}
-            </div>
+                )
+    </React.Fragment>
         </div>
     )
 }
