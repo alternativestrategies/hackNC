@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Route, NavLink } from 'react-router-dom';
 
 const Content = () => {
   return (
@@ -16,9 +17,11 @@ const Content = () => {
               even more personal. Why not match the special occasion to an
               astrological date or a loved one’s horoscope!
             </p>
+            <NavLink to="/products">
             <button type="button" class="btn btn-who">
               Check it Out
             </button>
+            </NavLink>
           </div>
 
           <div class="col-md-6">
