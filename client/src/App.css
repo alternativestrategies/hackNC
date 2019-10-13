@@ -21,6 +21,10 @@
   color: #09d3ac;
 }
 
-.ReactModal__Overlay {
-  z-index: 1000;
+.hidden{
+  display:none !important;
+}
+
+.profile{
+  display: block !important;
 }
