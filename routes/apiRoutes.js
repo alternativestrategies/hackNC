@@ -1,5 +1,9 @@
 const router = require("express").Router()
 const Products = require('../models/products.js')
+const Users = require('../models/users.js')
+const Bid = require('../models/bids.js')
+const EndBid = require('../models/endbid.js')
+const StartBid = require('../models/startbid.js')
 const bcrypt = require('bcrypt')
 const Joi = require('joi')
 
@@ -28,12 +32,33 @@ router.get('/', (req, res) => {
 //gets products from database
 router.get('/products', async (req, res) => {
     try {
-        const products = await Products.find()
-        const productsData = res.json(products)
-        res.status(200).send(productsData)
+        const products = await Products.find().limit(10)
+        res.json(products)
     } catch(err) {
         res.status(500).json({message: err.message})
     }
+})
+
+
+router.get('/starting_soon', async(req, res) => {
+    let date = new Date()
+    try{
+       const time = await StartBid.find({start_time: {$gte : date}});
+       res.json(time);
+    }
+    catch(err) {
+        res.status(500).json({message: err.message})
+    }  
+})
+router.get('/ending_soon', async(req, res) => {
+    let date = new Date()
+    try{
+       const time = await EndBid.find({end_time: {$gte : date}});
+       res.json(time);
+    }
+    catch(err) {
+        res.status(500).json({message: err.message})
+    }  
 })
 
 router.get('/products/filter/:galaxy', async (req, res) => {
@@ -41,9 +66,8 @@ router.get('/products/filter/:galaxy', async (req, res) => {
     const ANY = "any";
     if(galaxy !== ANY){
         try {
-            const products = await Products.find({galaxy: `${galaxy}`})
-            const productsData = res.json(products)
-            res.status(200).send(products)
+            const products = await Products.find({galaxy: `${galaxy}`}).limit(10)
+            res.json(products)
         }catch(err){
             res.status(500).json({message: err.message})
         }
@@ -106,5 +130,6 @@ router.post('/user/login', async (req, res) => {
 
     res.status(200).send(true)
 })
+
 
 module.exports = router;
