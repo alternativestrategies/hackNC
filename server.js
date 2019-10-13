@@ -28,8 +28,6 @@ db.once('open', () => console.log('connected to mongod database'))
 
 //requires the model schema
 const Products = require('./models/products.js')
-
-//seeds database
 Products.create([
     {
         product_name: 'Mimosa',
@@ -102,6 +100,38 @@ Products.create([
         img: 'albireo.jpg'
     }
 ])
+const User = require('./models/users.js')
+User.create([
+    {first_name: 'Arely',
+    last_name: 'Guevara',
+    bids: ['5da27ee4ddb8a37d95d94bc6', '5da27ee4ddb8a37d95d94bc7', '5da27ee4ddb8a37d95d94bc8']
+},
+{
+    first_name: 'Lenny',
+     last_name: 'Dickey',
+     bids: ['5da27ee4ddb8a37d95d94bc6', '5da27ee4ddb8a37d95d94bc7', '5da27ee4ddb8a37d95d94bc8']
+},
+{
+    first_name: 'Lucy',
+     last_name: 'Yang',
+     bids: ['5da27ee4ddb8a37d95d94bc6', '5da27ee4ddb8a37d95d94bc7', '5da27ee4ddb8a37d95d94bc8']
+},
+{
+    first_name: 'Skyler',
+     last_name: 'Stevens',
+     bids: ['5da27ee4ddb8a37d95d94bc6', '5da27ee4ddb8a37d95d94bc7', '5da27ee4ddb8a37d95d94bc8']
+}
+])
+
+User.find({})
+.populate('bids')
+.exec(function(err, p){
+    if(err) throw err;
+    p.forEach( bid => 
+        console.log(bid)
+    )
+})
+
 
 //requires routes
 const apiRoutes = require('./routes/apiRoutes.js')
