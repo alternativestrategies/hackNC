@@ -22,7 +22,7 @@ const Nav = (state) => {
 
     useEffect(() => {
         toggleProfile()
-    }, [hidden])
+    }, [])
 
     return (
         //To use react-router-dom you have to wrap the code for the links in <BrowserRouter>
