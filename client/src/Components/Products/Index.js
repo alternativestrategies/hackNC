@@ -1,9 +1,26 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Cards'
-
 
 const Products = (state) => {
     const [products, setProducts] = useState(null)
+
+
+    const productsApiCaller = async () => {
+        try {
+            const res = await fetch("api/products");
+            const text = await res.text();
+            const response = text.length ? JSON.parse(text) : {}
+            setProducts(response)
+        }
+        catch (error) {
+            throw error;
+        }
+    }
+
+    useEffect(() => {
+        productsApiCaller()
+    }, [])
+
     const { user, loggedInStatus } = state.state.state
     console.log(user, loggedInStatus)
     return (
@@ -14,7 +31,7 @@ const Products = (state) => {
                 <div className="container-drop">
                     <form>
                         <h3>Reset Filter</h3>
-                        <input type="button" value="reset"></input>
+                        <input type="button" value="reset" onClick={productsApiCaller}></input>
                     </form>
                 </div>
                 <div className="container-drop">
