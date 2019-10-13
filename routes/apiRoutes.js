@@ -31,9 +31,14 @@ router.get('/', (req, res) => {
 
 //gets products from database
 router.get('/products', async (req, res) => {
+    const productResult = []
     try {
-        const products = await Products.find().limit(10)
-        res.json(products)
+        const product = await Products.find().limit(10)
+        product.forEach((doc, err) => {
+            productResult.push(doc)
+        }, () => {
+            res.send(productResult)
+        })
     } catch(err) {
         res.status(500).json({message: err.message})
     }
